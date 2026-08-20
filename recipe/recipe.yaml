@@ -1,0 +1,54 @@
+schema_version: 1
+
+context:
+  name: empy
+  version: "4.2.1"
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/e/empy/empy-${{ version }}.tar.gz
+  sha256: b831d642fca95507820b53774c051803142b8441b8c42bf800011da06ba4241b
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - em
+        - emdoc
+        - emhelp
+        - emlib
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - script:
+      - em.py --version
+
+about:
+  homepage: http://www.alcyone.com/software/empy/
+  license: BSD-3-Clause
+  license_file: LICENSE.md
+  summary: A powerful and robust templating system for Python.
+  description: |
+    EmPy is a templating system for inserting Python code in template text.
+    It processes expansions marked with a configurable prefix and writes the
+    remaining text to the output.
+
+extra:
+  recipe-maintainers:
+    - wolfv
