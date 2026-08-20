@@ -1,6 +1,6 @@
 {% set name = "empy" %}
-{% set version = "3.3.4" %}
-{% set sha256 = "9126211471fc7ff83fdd40beca93eb6de5681758fbe68b4cf8af6326259df1b1" %}
+{% set version = "4.2.1" %}
+{% set sha256 = "48f7cff0aedfd275c6702d11959fda023384b048497dbe517dec13ea1ae3af12" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   noarch: python
 
