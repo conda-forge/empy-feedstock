@@ -5,11 +5,13 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/empy-feedstock/
 
 Home: http://www.alcyone.com/software/empy/
 
-Package license: LGPL-2.1
+Package license: BSD-3-Clause
 
 Summary: A powerful and robust templating system for Python.
 
-Development: http://www.alcyone.com/software/empy/
+EmPy is a templating system for inserting Python code in template text.
+It processes expansions marked with a configurable prefix and writes the
+remaining text to the output.
 
 Current build status
 ====================
